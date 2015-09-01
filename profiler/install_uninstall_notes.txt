@@ -1,0 +1,31 @@
+INSTALL:
+"C:\Program Files (x86)\Common Files\ArcGIS\bin\ESRIRegAsm.exe" /p:desktop C:\ArcGIS_Stream_profiler\Profiler1.dll
+
+UNINSTALL:
+"C:\Program Files (x86)\Common Files\ArcGIS\bin\ESRIRegAsm.exe" /p:desktop /u C:\ArcGIS_Stream_profiler\profiler.dll
+
+Double click on:
+C:\Program Files\ArcGIS\Bin\categories.exe
+
+Scroll down to ESRI Mx CommandBars, expand
+search for profiler1* and remove all objects related to profiler toolbar
+- should just be the toolbar (should be at the end of the list)
+Scroll down to ESRI Mx Commands, expand
+search for profiler1* and remove all objects related to profiler toolbar
+- several functions (should be at the end of the list)
+
+Old DLL:
+
+Use categories.exe from the Arcgis\bin folder.  Open MxCommands and MxCommandbars folders.  Select and remove all profiler1.* entries.  Remove or rename the old DLL.
+
+The registerProfilerDLL.bat file contains these files on my computer:
+
+"C:\Program Files\Common Files\ArcGIS\bin\ESRIRegAsm.exe" /p:desktop C:\local\FromGMail\DanielProfiler.NET\obj\Debug\Profiler1.dll
+
+You should change the location of the DLL to the place you put it, and that depends on the architecture of the machine you are using.  On a 32 bit machine it looks like this:
+
+"C:\Program Files\ArcGIS\Desktop10.0\Bin\Profiler1.dll" 
+
+Quotes are necessary with paths that include spaces, as above.  On 64 bit machines, it should look like this:
+
+"C:\Program Files (x86)\ArcGIS\Desktop10.0\Bin\Profiler1.dll" 
